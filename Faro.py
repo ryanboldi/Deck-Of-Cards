@@ -1,10 +1,15 @@
-import DeckOfCards as DC
+from DeckOfCards import Card
+from DeckOfCards import DeckOfCards
 
-card = DC.Card("K","Spades")
-newCard = DC.Card("2","Hearts")
+ryanDeck = DeckOfCards()
 
-ryanDeck = DC.DeckOfCards()
+card = Card("K","Spades")
+newCard = Card("K","Hearts")
+ryanDeck.addCardFromId(51)
+ryanDeck.addRandomCard()
+
 ryanDeck.addCard(card)
 ryanDeck.addCard(newCard)
 
 print(ryanDeck)
+print(newCard.getId())
