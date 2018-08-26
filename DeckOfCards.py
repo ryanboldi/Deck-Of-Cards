@@ -104,6 +104,10 @@ class DeckOfCards(object):
     
     def addRandomCard(self):
         self.addCardFromId(randint(0,51))
+        
+    def addRandomCards(self, amount):
+        for i in range(amount):
+            self.addRandomCard()
 
 
 
