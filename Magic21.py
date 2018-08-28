@@ -36,12 +36,15 @@ def magicDeal(Deck):
     
     print (len(MainArray))
     for i in range(len(MainArray)):
-        print (str(temp1), str(temp2), str(temp3))
+        print (i)
         if inSeq(i,3,-3):
+            print (i, "temp 1")
             temp1.append(MainArray[i])
         elif inSeq(i,3,-2):
+            print (i, "temp 2")
             temp2.append(MainArray[i])
-        elif inSeq(i,3,-1):
+        else:
+            print (i, "temp 3")
             temp3.append(MainArray[i])
             
     return temp1, temp2 , temp3
