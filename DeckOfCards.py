@@ -2,7 +2,7 @@
 Author: Ryan Boldi
 Date: 19/8/18
 """
-from random import randint
+from random import randint, seed
 
 class Card(object):
     """Class of a Card object
@@ -68,6 +68,12 @@ class Card(object):
     
     def __str__(self):
         return str(self.name)
+    
+    def __repr__(self):
+        return str(self.name)
+    
+    def __eq__(self, other):
+        return self.id == other.id
            
 class DeckOfCards(object):
     values = ["A","2","3","4","5","6","7","8","9","10","J","Q","K"]
@@ -83,7 +89,7 @@ class DeckOfCards(object):
     def __str__(self):
         return str([str(i) for i in self.Deck])
     
-    def addCardFromId(self, Id):
+    def getCardFromId(self, Id):
         if Id <= 12:
             suit = "Spades"
             value = self.values[Id-1]
@@ -99,15 +105,25 @@ class DeckOfCards(object):
         else:
             raise ValueError("Id not valid")
         
-        self.addCard(Card(value,suit))
+        return (Card(value,suit))
         
+    def addCardFromId(self, Id):
+        self.addCard(self.getCardFromId(Id))
     
-    def addRandomCard(self):
-        self.addCardFromId(randint(0,51))
+    
+    def addRandomCard(self):   
+        rand = randint(0,51)
+        if not (self.getCardFromId(rand) in self.Deck):
+            self.addCardFromId(rand)
+            
         
     def addRandomCards(self, amount):
-        for i in range(amount):
+        for i in range (amount):
             self.addRandomCard()
+        
+    def deckToArray(self):
+        return self.Deck
 
-
-
+    def printDeck(self):
+        temp = self.deckToArray()
+        print(*temp, sep=" ")
