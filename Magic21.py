@@ -1,4 +1,5 @@
 from DeckOfCards import DeckOfCards
+from Card import Card
 import time
 
 
