@@ -61,8 +61,7 @@ def doTrick(Deck):
                     newDeck.addCards(arr[2])
                 
                 Deck = newDeck
-                print("Made new Deck")
-                Good == True
+                Good = True
                     
             else:
                 print("not a valid pile, please try again")
