@@ -1,4 +1,4 @@
-# Deck of cards class
+# Deck of cards
 
 ### This Repository contains a few seperate files:
 
@@ -14,3 +14,4 @@
 - [x] Add random card adding functions the Deck of cards class
 - [ ] Add Shuffling mechanics to the Deck of cards class (riffle and faro)
 - [ ] Add a second magic trick (5 card)
+- [ ] Add a good way to visualise the current Deck of cards
