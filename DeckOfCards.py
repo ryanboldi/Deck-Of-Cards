@@ -45,6 +45,8 @@ class DeckOfCards(object):
         rand = randint(0,51)
         if not (self.getCardFromId(rand) in self.Deck):
             self.addCardFromId(rand)
+        else:
+            self.addRandomCard()
             
         
     def addRandomCards(self, amount):
@@ -53,6 +55,10 @@ class DeckOfCards(object):
         
     def deckToArray(self):
         return self.Deck
+    
+    def addCards(self, cards):
+        for i in range(len(cards)):
+            self.Deck.append(cards[i])
 
     def printDeck(self):
         temp = self.deckToArray()
