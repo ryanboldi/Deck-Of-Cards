@@ -12,6 +12,6 @@
 
 ## Tasks 
 - [x] Add random card adding functions the Deck of cards class
+- [x] Find some self working tricks and add one.
 - [ ] Add Shuffling mechanics to the Deck of cards class (riffle and faro)
-- [ ] Add a second magic trick (5 card)
-- [ ] Add a good way to visualise the current Deck of cards
+
