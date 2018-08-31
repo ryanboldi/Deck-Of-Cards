@@ -17,25 +17,26 @@ class Card(object):
     symbols = ["♠","♥","♣","♦"]
     values = ["A","2","3","4","5","6","7","8","9","10","J","Q","K"]
     
-    def __init__(self, value, suit, name = None):
+    def __init__(self, value= None, suit= None, name = None):
         self.id = 0
         
-        if (suit == "Hearts" or suit == "Diamonds"):    
-            self.color = "Red"
-        elif  (suit == "Spades" or suit == "Clubs"):
-            self.color = "Black"
-        else:
-            raise ValueError("Color and suit do not match")
-       
-        if (suit in self.suits):
-            self.suit = suit
-        else:
-            raise ValueError("Suit not valid")
-            
-        if (value in self.values):
-            self.value = value
-        else:
-            raise ValueError("Value not valid")
+        if value != None and suit != None:
+            if (suit == "Hearts" or suit == "Diamonds"):    
+                self.color = "Red"
+            elif  (suit == "Spades" or suit == "Clubs"):
+                self.color = "Black"
+            else:
+                raise ValueError("Color and suit do not match")
+           
+            if (suit in self.suits):
+                self.suit = suit
+            else:
+                raise ValueError("Suit not valid")
+                
+            if (value in self.values):
+                self.value = value
+            else:
+                raise ValueError("Value not valid")
             
         self.symbol = None
         if self.suit == "Spades":
@@ -56,6 +57,8 @@ class Card(object):
             if value == str(self.values[i]):
                 self.id += i
         
+        if ((value == None or suit == None) and name == None):
+            raise ValueError ("No arguments given")
         
     def getId(self):
         return self.id
