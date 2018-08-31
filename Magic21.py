@@ -17,10 +17,12 @@ def main():
     print("Got one?")
     time.sleep(2)
     
-    doTrick(TrickDeck)
-    
+    card = doTrick(TrickDeck)
+    print("was this your card?")
+    print(card)
 
 def doTrick(Deck):
+    #does the magic trick and returns the chosen card
     print("I will now deal these cards into 3 piles")
     time.sleep(1)
     print("....")
@@ -48,6 +50,9 @@ def doTrick(Deck):
                 break
             
             if int(num) in allowedInputs:
+                #this could be done better, but it makes sure that the cards go
+                #back into the order [arr, chosen arr, arr]
+                
                 newDeck = DeckOfCards()
                 num = int(num)-1
                 try:
@@ -66,8 +71,9 @@ def doTrick(Deck):
             else:
                 print("not a valid pile, please try again")
                     
-            
-    
+    chosenCard = Deck.deckToArray()[10]
+        
+    return chosenCard
     
 
 
