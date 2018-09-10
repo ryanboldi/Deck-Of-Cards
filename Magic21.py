@@ -102,8 +102,6 @@ def magicDeal(Deck):
 
 #determines if a number is part of a sequence when given the nth term
 def inSeq(num, bef, aft):
-    #print("nth term =" ,bef, "n", aft)
-    #print("is ", num, " in ", bef, "n", aft)
     temp = num - aft
     if temp % bef == 0:
         return True

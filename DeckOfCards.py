@@ -63,3 +63,11 @@ class DeckOfCards(object):
     def printDeck(self):
         temp = self.deckToArray()
         print(*temp, sep=" ")
+        
+    def riffleShuffle(self):
+        self.deck1 = self.Deck[len(self.Deck)/2]
+            
+            
+    
+            
+        
