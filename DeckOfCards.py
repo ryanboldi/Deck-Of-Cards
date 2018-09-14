@@ -67,7 +67,13 @@ class DeckOfCards(object):
     def riffleShuffle(self):
         self.deck1 = self.Deck[len(self.Deck)/2]
             
+        raise NotImplementedError
             
+    def inFaro(self):
     
-            
+        raise NotImplementedError
+        
+    def outFaro(self):
+        
+        raise NotImplementedError
         
