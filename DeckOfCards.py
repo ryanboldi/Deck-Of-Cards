@@ -2,6 +2,7 @@
 Author: Ryan Boldi
 Date: 19/8/18
 """
+import math
 from random import randint
 from Card import Card
           
@@ -9,6 +10,9 @@ class DeckOfCards(object):
     values = ["A","2","3","4","5","6","7","8","9","10","J","Q","K"]
     def __init__(self):
         self.Deck = []
+    
+    def __add__(self,other):
+        return(self.Deck + other.Deck)
     
     def getDeck(self):
         return self.Deck
@@ -65,15 +69,23 @@ class DeckOfCards(object):
         print(*temp, sep=" ")
         
     def riffleShuffle(self):
-        self.deck1 = self.Deck[len(self.Deck)/2]
             
         raise NotImplementedError
-            
+         
+
+        
+    #leaves the original first card first, and the original last card last
+    def outFaro(self):
+        FullLen = len(self.Deck)
+        deck1 = self.Deck[0:FullLen:2]
+        deck2 = self.Deck[1:FullLen:2]
+        
+        return (deck1+deck2)
+        
+    
+        #leaves the first card second, and the bottom second to bottom
     def inFaro(self):
     
         raise NotImplementedError
         
-    def outFaro(self):
-        
-        raise NotImplementedError
         
