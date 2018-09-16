@@ -77,15 +77,40 @@ class DeckOfCards(object):
     #leaves the original first card first, and the original last card last
     def outFaro(self):
         FullLen = len(self.Deck)
-        deck1 = self.Deck[0:FullLen:2]
-        deck2 = self.Deck[1:FullLen:2]
+        if FullLen % 2 != 0:
+            #noramlises for odd lengths
+            FullLen+=1
+        deck1 = self.Deck[:int(FullLen/2)]
+        deck2 = self.Deck[int(FullLen/2):]
         
-        return (deck1+deck2)
         
+        newDeck = DeckOfCards()
+        #print(deck1, deck2)
+        
+        for i in range(math.ceil(FullLen/2)):
+            newDeck.addCard(deck1[i])
+            newDeck.addCard(deck2[i])
+        
+        return newDeck
     
         #leaves the first card second, and the bottom second to bottom
     def inFaro(self):
     
-        raise NotImplementedError
+        FullLen = len(self.Deck)
+        if FullLen % 2 != 0:
+            #noramlises for odd lengths
+            FullLen+=1
+        deck1 = self.Deck[:int(FullLen/2)]
+        deck2 = self.Deck[int(FullLen/2):]
+        
+        
+        newDeck = DeckOfCards()
+        #print(deck1, deck2)
+        
+        for i in range(math.ceil(FullLen/2)):
+            newDeck.addCard(deck2[i])
+            newDeck.addCard(deck1[i])
+        
+        return newDeck
         
         

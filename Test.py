@@ -13,6 +13,6 @@ Deck = DeckOfCards.DeckOfCards()
 Deck.addRandomCards(52)
 
 print(Deck)
-
-print(Deck.outFaro())
+print(("                   \n"))
+print(Deck.inFaro())
     
